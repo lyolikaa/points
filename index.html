@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Points & Circles Interactive App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #canvas { border: 1px solid #888; cursor: crosshair; }
+    #info { margin-top: 16px; }
+    #controls { margin-top: 16px; }
+    button { margin-right: 8px; }
+    #about { display: none; background: #f9f9f9; border: 1px solid #ccc; padding: 12px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h2>Points & Circles Interactive App</h2>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <div id="info"></div>
+  <div id="controls">
+    <button id="resetBtn">Reset</button>
+    <button id="aboutBtn">About</button>
+  </div>
+  <div id="about">
+    <strong>About:</strong><br>
+    Author: lyolikaa<br>
+    Select four points to create two circles. Move points to update shapes. Reset to start over.<br>
+    Intersection points and coordinates are shown below.<br>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

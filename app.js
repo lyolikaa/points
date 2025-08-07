@@ -13,7 +13,7 @@ canvas.addEventListener('mousedown', (e) => {
   const {x, y} = getMousePos(e);
   // Check if dragging existing point
   for (let i = 0; i < points.length; i++) {
-    if (distance(points[i], {x, y}) < 8) {
+    if (distance(points[i], {x, y}) < 5) {
       draggingIdx = i;
       return;
     }
@@ -33,6 +33,12 @@ canvas.addEventListener('mousemove', (e) => {
     points[draggingIdx] = {x, y};
     draw();
     updateInfo();
+  }
+  else {
+    // useful: Show cursor as pointer when hovering over existing points
+    const {x, y} = getMousePos(e);
+    const isOverPoint = points.some(p => distance(p, {x, y}) < 5);
+    canvas.style.cursor = isOverPoint ? 'pointer' : 'default';
   }
 });
 
